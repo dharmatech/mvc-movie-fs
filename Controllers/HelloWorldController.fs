@@ -7,3 +7,5 @@ type HelloWorldController () =
     inherit Controller()
 
     member this.Index () = "default action"
+
+    member this.Welcome () = "welcome action method"
