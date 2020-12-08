@@ -10,6 +10,8 @@ open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
+open Microsoft.Extensions.DependencyInjection
+open MvcMovieFs.Data
 
 module Program =
     let exitCode = 0
@@ -20,8 +22,21 @@ module Program =
                 webBuilder.UseStartup<Startup>() |> ignore
             )
 
+    // [<EntryPoint>]
+    // let main args =
+    //     CreateHostBuilder(args).Build().Run()
+
+    //     exitCode
+
     [<EntryPoint>]
     let main args =
-        CreateHostBuilder(args).Build().Run()
+        let host = CreateHostBuilder(args).Build()
+        use scope = host.Services.CreateScope()
+        let services = scope.ServiceProvider
+        let context = services.GetRequiredService<MvcMovieContext>()
 
+        MvcMovieFs.Data.DataContextInitialize.Initialize(context) |> ignore
+
+        host.Run()
+        
         exitCode

@@ -11,6 +11,8 @@ open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
+open Microsoft.EntityFrameworkCore
+open MvcMovieFs.Data
 
 type Startup private () =
     new (configuration: IConfiguration) as this =
@@ -22,6 +24,11 @@ type Startup private () =
         // Add framework services.
         services.AddControllersWithViews().AddRazorRuntimeCompilation() |> ignore
         services.AddRazorPages() |> ignore
+        services.AddDbContext<MvcMovieContext>(fun options ->
+            // options.UseSqlite(Configuration.GetConnectionString("MvcMovieContext"))
+            // options.UseSqlite("Data Source=MvcMovie.db") |> ignore
+            options.UseInMemoryDatabase("DB_ToDo") |> ignore
+        ) |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     member this.Configure(app: IApplicationBuilder, env: IWebHostEnvironment) =

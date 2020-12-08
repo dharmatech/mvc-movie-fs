@@ -9,7 +9,7 @@ open System.Diagnostics
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Logging
 
-open MvcMovieFs.Models
+open MvcMovieFs.Models.ErrorViewModel
 
 type HomeController (logger : ILogger<HomeController>) =
     inherit Controller()

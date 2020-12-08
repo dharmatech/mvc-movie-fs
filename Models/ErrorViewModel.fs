@@ -1,4 +1,4 @@
-namespace MvcMovieFs.Models
+namespace MvcMovieFs.Models.ErrorViewModel
 
 open System
 
