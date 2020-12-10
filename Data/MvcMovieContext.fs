@@ -23,30 +23,39 @@ module DataContextInitialize =
         context.Movie.AddRange(
             {
                 Id = 0 
-                Title = "When Harry Met Sally"
-                ReleaseDate = DateTime.Parse("1989-2-12")
-                Genre = "Romantic Comedy"
+                Title = "Enter the Dragon"
+                ReleaseDate = DateTime.Parse("1973-08-19")
+                Genre = "Martial Arts"
                 Price = 7.99M
-                Rating = "G"
+                Rating = "R"
             },
             
             {
                 Id = 0
-                Title = "Ghostbusters "
-                ReleaseDate = DateTime.Parse("1984-3-13")
-                Genre = "Comedy"
+                Title = "The Twilight Samurai"
+                ReleaseDate = DateTime.Parse("2002-11-02")
+                Genre = "Samurai"
                 Price = 8.99M
-                Rating = "G"
+                Rating = "R"
             },
 
             
             {
                 Id = 0
-                Title = "Ghostbusters 2"
-                ReleaseDate = DateTime.Parse("1986-2-23")
-                Genre = "Comedy"
+                Title = "Ford v Ferrari"
+                ReleaseDate = DateTime.Parse("2019-11-15")
+                Genre = "Racing"
                 Price = 9.99M
-                Rating = "G"
+                Rating = "PG-13"
+            },
+
+            {
+                Id = 0
+                Title = "War Games"
+                ReleaseDate = DateTime.Parse("1983-06-03")
+                Genre = "Computer Hacker"
+                Price = 3.99M
+                Rating = "PG"
             },
             
             {
